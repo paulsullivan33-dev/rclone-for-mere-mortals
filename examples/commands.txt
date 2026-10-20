@@ -1,0 +1,45 @@
+rclone for Mere Mortals -- command card
+=======================================
+All commands use the lab's remotes. Swap in your own remote names.
+
+Configuration (chapter 2)
+  rclone config file                       where the config lives
+  rclone config create local1 local        make a local remote
+  rclone listremotes                       the names you have
+  rclone config show local1                one remote's settings
+  rclone obscure some-password             encode a password for config
+
+Looking around (chapter 3) -- all read-only
+  rclone lsd  local1:store/documents       directories
+  rclone ls   local1:store/documents       files with sizes
+  rclone lsf  local1:store/documents --recursive
+  rclone size local1:store/documents       totals
+  rclone tree local1:store/documents       the picture
+  rclone about local1:store                the place itself (quota/disk)
+
+Moving files (chapter 4)
+  rclone copy   src local1:store/dst       add/update, never deletes
+  rclone sync   src local1:store/dst       make dst MATCH src (deletes!)
+  rclone move   local1:store/a local1:store/b
+  rclone copyto chunked:big.bin back.bin   one file, renamed on the way
+  rclone purge  local1:store/dst           remove a directory tree (no undo)
+
+Safety (chapters 5 and 6)
+  ... --dry-run -v                         rehearse, read the Skipped lines
+  ... --max-delete 1                       stop fatally past 1 deletion
+  ... --backup-dir local1:store/rescue     deleted files land here instead
+  ... --log-file run.log -v                keep the run's record
+
+Checking (chapter 8)
+  rclone check src local1:store/dst        exit 1 if differences
+  rclone check src local1:store/dst --size-only
+  rclone hashsum MD5 local1:store/dst      hashes in checksum format
+  rclone cryptcheck src secret:path        the check for crypt remotes
+
+Encrypted storage (chapter 10)
+  rclone copy src/notes secret:notes       encrypt on the way in
+  rclone lsf  local1:store/encrypted --recursive   what storage sees
+  rclone copy secret:notes restored       decrypt on the way out
+
+Serving (chapter 12)
+  rclone serve http local1:store/documents --addr 127.0.0.1:18099 --read-only

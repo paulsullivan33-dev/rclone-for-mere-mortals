@@ -1,0 +1,11 @@
+# log-sync.timer -- every ten minutes, and catch up after downtime.
+[Unit]
+Description=Run log-sync.service every ten minutes
+
+[Timer]
+OnCalendar=*:0/10
+Persistent=true
+Unit=log-sync.service
+
+[Install]
+WantedBy=timers.target

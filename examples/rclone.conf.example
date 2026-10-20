@@ -1,0 +1,29 @@
+# rclone.conf.example -- the lab's config file, as an example.
+#
+# Copy to the path printed by `rclone config file`, or point
+# RCLONE_CONFIG at it. The password values below are PLACEHOLDERS:
+# generate your own with `rclone obscure YOUR-PASSWORD` and never
+# commit a config with real values in it to git.
+#
+# [local1] is the only remote the early chapters need. The others
+# arrive in chapters 10 (secret) and 11 (docs, chunked).
+
+[local1]
+type = local
+
+[secret]
+type = crypt
+remote = local1:store/encrypted
+password = <output of: rclone obscure YOUR-PASSWORD>
+password2 = <output of: rclone obscure YOUR-SALT>
+filename_encryption = standard
+directory_name_encryption = true
+
+[docs]
+type = alias
+remote = local1:store/documents
+
+[chunked]
+type = chunker
+remote = local1:store/chunkstore
+chunk_size = 1M

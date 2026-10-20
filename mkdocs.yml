@@ -1,0 +1,29 @@
+site_name: rclone for Mere Mortals
+site_description: Plain-language rclone. Remotes, the copy and sync verbs, dry runs as a way of life, safe deleting, filters, an encryption remote you can test at home, and scheduled log uploads, all run for real against local storage.
+site_url: https://paulsullivan33-dev.github.io/rclone-for-mere-mortals/
+
+# Guides live at the repo root (nice for GitHub browsing).
+# The deploy workflow copies them into docs/ before building.
+theme:
+  name: material
+
+nav:
+  - Home: index.md
+  - What rclone Is: what-rclone-is.md
+  - Remotes and Config: remotes-and-config.md
+  - Looking Around: looking-around.md
+  - The Core Verbs: the-core-verbs.md
+  - Dry Runs, Logs, and Exit Codes: dry-runs-and-logging.md
+  - Deleting, Carefully: deleting-carefully.md
+  - Filters: filters.md
+  - Check and Verify: check-and-verify.md
+  - The Crypt Remote: the-crypt-remote.md
+  - Layered Remotes: layered-remotes.md
+  - Bisync, the Two-Way Street: bisync-two-way.md
+  - Mount and Serve: mount-and-serve.md
+  - A Real Cloud Remote: a-real-cloud-remote.md
+  - Scheduling It: scheduling-it.md
+  - A Worked Example: worked-example.md
+  - Troubleshooting: troubleshooting.md
+  - Glossary: glossary.md
+  - Writing Criteria: criteria.md

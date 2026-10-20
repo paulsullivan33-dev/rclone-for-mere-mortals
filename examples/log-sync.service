@@ -1,0 +1,15 @@
+# log-sync.service -- run the log-upload script once.
+# Install with log-sync.timer under ~/.config/systemd/user/,
+# adjust the path, then:
+#   systemctl --user daemon-reload
+#   systemctl --user enable --now log-sync.timer
+[Unit]
+Description=Upload new log files to storage (rclone copy)
+After=network-online.target
+
+[Service]
+Type=oneshot
+# The script sets its own log file; RCLONE_CONFIG matters if your
+# config is not in rclone's default location (see chapter 14).
+Environment=RCLONE_CONFIG=%h/rclone-lab/rclone.conf
+ExecStart=/bin/sh %h/bin/sync-logs.sh
