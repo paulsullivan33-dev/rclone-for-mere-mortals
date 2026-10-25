@@ -103,3 +103,19 @@ people actually automate. The middle chapters are
 reference for the day a sync does something you
 didn't expect — which, with a tool that deletes to
 make things match, is a day that comes for everyone.
+
+---
+
+## Part of the series
+
+This guide is one of the [For Mere Mortals](https://paulsullivan33-dev.github.io/mere-mortals/) guides: plain-language guides to the tools programmers and makers use.
+
+Related guides:
+
+- [rsync for Mere Mortals](https://paulsullivan33-dev.github.io/rsync-for-mere-mortals/)
+- [Backups for Mere Mortals](https://paulsullivan33-dev.github.io/backups-for-mere-mortals/)
+- [Nextcloud for Mere Mortals](https://paulsullivan33-dev.github.io/nextcloud-for-mere-mortals/)
+
+## License
+
+The writing in this guide is licensed under [CC BY 4.0](https://github.com/paulsullivan33-dev/rclone-for-mere-mortals/blob/main/LICENSE). Code examples and lab scripts are licensed under the [MIT License](https://github.com/paulsullivan33-dev/rclone-for-mere-mortals/blob/main/LICENSE-CODE).
